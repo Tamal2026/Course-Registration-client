@@ -1,0 +1,74 @@
+[
+    {
+        "id": 1,
+        "courseName": "JavaScript Fundamentals",
+        "credit": 3,
+        "price": 199.99,
+        "courseDetails": "A beginner's guide to JavaScript programming.",
+        "img": "https://i.ibb.co/SRmBNqC/js-f.jpg"
+    },
+    {
+        "id": 2,
+        "courseName": "Python for Data Science",
+        "credit": 4,
+        "price": 249.99,
+        "courseDetails": "Learn Python for data analysis and machine learning.",
+        "img": "https://i.ibb.co/wdK486W/Python.jpg.jpg"
+    },
+    {
+        "id": 3,
+        "courseName": "Java Programming Masterclass",
+        "credit": 5,
+        "price": 299.99,
+        "courseDetails": "Comprehensive Java programming course for all levels.",
+        "img": "https://i.ibb.co/SJs826m/java.jpg"
+    },
+    {
+        "id": 4,
+        "courseName": "C++ Programming Basics",
+        "credit": 3,
+        "price": 179.99,
+        "courseDetails": "Introduction to C++ programming language.",
+        "img": "https://i.ibb.co/c8pSHxR/c.png"
+    },
+    {
+        "id": 5,
+        "courseName": "Ruby on Rails Development",
+        "credit": 4,
+        "price": 229.99,
+        "courseDetails": "Build web applications with Ruby on Rails.",
+        "img": "https://i.ibb.co/PTW29Df/Ruby.jpg"
+    },
+    {
+        "id": 6,
+        "courseName": "Swift for iOS App Development",
+        "credit": 3,
+        "price": 199.99,
+        "courseDetails": "Learn Swift for iOS app development.",
+        "img": "https://i.ibb.co/5YHDZVH/swift.jpg"
+    },
+    {
+        "id": 7,
+        "courseName": "PHP Web Development",
+        "credit": 4,
+        "price": 219.99,
+        "courseDetails": "Master PHP for web development projects.",
+        "img": "https://i.ibb.co/rbt8fyW/php.jpg"
+    },
+    {
+        "id": 8,
+        "courseName": "React.js Essentials",
+        "credit": 3,
+        "price": 199.99,
+        "courseDetails": "Learn the fundamentals of React.js for web development.",
+        "img": "https://i.ibb.co/2vDD8Lv/react.jpg"
+    },
+    {
+        "id": 9,
+        "courseName": "Data Structures and Algorithms in C#",
+        "credit": 4,
+        "price": 249.99,
+        "courseDetails": "Explore data structures and algorithms using C#.",
+        "img": "https://i.ibb.co/WPRkzkS/dsa.png"
+    }
+]
