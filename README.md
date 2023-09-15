@@ -10,5 +10,5 @@
   1. UseState
   2. Useeffect
   3. handleCourse Function
-  4. Adding Toast for same course and maximum credit Limit
+  4. Adding Toast for same course and maximum credit Limit 
 
