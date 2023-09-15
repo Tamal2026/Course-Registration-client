@@ -6,9 +6,9 @@
 
 * This is explaination how i managed the state in my assainment
 
-For managing the state i followed 4 step here is 4 step 
-1.useState
-2.useEffect
-3. handleCourse Function
-4.Adding Toast for copy Course and adding max Credit
+* For managing the state i followed 4 step here is 4 step 
+  1. UseState
+  2. Useeffect
+  3. handleCourse Function
+  4. Adding Toast for same course and maximum credit Limit
 
