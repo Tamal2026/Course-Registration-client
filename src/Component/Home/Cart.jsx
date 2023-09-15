@@ -1,12 +1,12 @@
 
 import PropTypes from "prop-types";
 
-const Cart = ({ selectedCourse }) => {
+const Cart = ({ selectedCourse,remaining,totalCredit }) => {
     console.log(selectedCourse);
 
     return (
         <div>
-            <h1>Credit Hour Remaining:</h1>
+            <h1 className="mb-3">Credit Hour Remaining{remaining}</h1>
             <hr />
             <h1 className="font-bold text-xl pb-4">Course Name:
                 <ul>
@@ -18,7 +18,7 @@ const Cart = ({ selectedCourse }) => {
                 </ul>
             </h1>
             <hr />
-            <h1>Total Credit Hour:</h1>
+            <h1 className="text-black">Total Credit Hour: {totalCredit}</h1>
             <hr />
             <h1>Total Price:</h1>
         </div>
@@ -27,6 +27,9 @@ const Cart = ({ selectedCourse }) => {
 
 Cart.propTypes = {
     selectedCourse: PropTypes.array.isRequired,
+    remaining:PropTypes.func,
+    totalCredit:PropTypes.func
+
 };
 
 export default Cart;

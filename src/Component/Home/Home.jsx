@@ -4,7 +4,9 @@ import Cart from "./Cart";
 const Home = () => {
     const [allCourse, setallCourse] = useState([]);
     const [selectedCourse, setselectedCourse] = useState([]);
-    cosnt [remaining,setremaining]
+    const [remaining,setremaining] = useState(20);
+    const [totalCredit,settotalCredit] = useState(0);
+
     useEffect(() => {
         fetch("./info.json")
         .then(res => res.json())
@@ -20,13 +22,24 @@ const handleCourse=(course)=>{
     setselectedCourse([...selectedCourse,course])
     selectedCourse.forEach(item=>{
         count = count+item.credit;
-    });
-const totalRemaining = 20 - count;
-
-   }
+    })
    
+const totalRemaining = 20 - count;
+if(count>20){
+  return  alert('Tk sesh ar hbe ne')
+}
+else{
 
-};
+    settotalCredit(count);
+
+
+    setremaining(totalRemaining);
+       }
+       
+    
+    }
+
+}
 
     return (
         <>
@@ -48,7 +61,7 @@ const totalRemaining = 20 - count;
                     ))}
                 </div>
                 <div className="cart-container w-[950px] h-[380px] px-4 bg-white shadow-2xl rounded-xl">
-                    <Cart selectedCourse ={selectedCourse}></Cart>
+                    <Cart selectedCourse ={selectedCourse} remaining = {remaining} totalCredit ={totalCredit}></Cart>
                   
                 </div>
             </div>
