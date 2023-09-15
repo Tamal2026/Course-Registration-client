@@ -6,7 +6,7 @@
 
 * This is explaination how i managed the state in my assainment
 
-* For managing the state i followed 4 step here is 4 step 
+ For managing the state i followed 4 step here is 4 step 
   1. UseState
   2. Useeffect
   3. handleCourse Function
