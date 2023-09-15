@@ -4,13 +4,28 @@ import Cart from "./Cart";
 const Home = () => {
     const [allCourse, setallCourse] = useState([]);
     const [selectedCourse, setselectedCourse] = useState([]);
+    cosnt [remaining,setremaining]
     useEffect(() => {
         fetch("./info.json")
         .then(res => res.json())
         .then((data) => setallCourse(data))
     }, []);
 const handleCourse=(course)=>{
-setselectedCourse([...selectedCourse,course])
+    const isExist = selectedCourse.find(item=>item.id == course.id);
+    let count =course.credit;
+   if(isExist){
+    return alert("Already Complete");
+   }
+   else{
+    setselectedCourse([...selectedCourse,course])
+    selectedCourse.forEach(item=>{
+        count = count+item.credit;
+    });
+const totalRemaining = 20 - count;
+
+   }
+   
+
 };
 
     return (
