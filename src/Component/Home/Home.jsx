@@ -12,6 +12,8 @@ const Home = () => {
     const [selectedCourse, setselectedCourse] = useState([]);
     const [remaining,setremaining] = useState(20);
     const [totalCredit,settotalCredit] = useState(0);
+    const [totalPrice, setTotalPrice] = useState(0);
+
 
     useEffect(() => {
         fetch("./info.json")
@@ -20,15 +22,22 @@ const Home = () => {
     }, []);
 const handleCourse=(course)=>{
     const isExist = selectedCourse.find(item=>item.id == course.id);
+
     let count =course.credit;
+
+    let countPrice = course.price;
+
    if(isExist){
+
     couseSelectNotify();
    }
    else{
     setselectedCourse([...selectedCourse,course])
     selectedCourse.forEach(item=>{
         count = count+item.credit;
-    })
+        countPrice = countPrice+item.price;
+        
+    });
    
 const totalRemaining = 20 - count;
 if(count>20){
@@ -38,7 +47,7 @@ else{
 
     settotalCredit(count);
 
-
+    setTotalPrice(countPrice);
     setremaining(totalRemaining);
        }
        
@@ -69,7 +78,7 @@ const maxCredit = () => toast.warn("You reached maximum credit of courses");
                     ))}
                 </div>
                 <div className="cart-container w-[950px] h-[380px] px-4 bg-white shadow-2xl rounded-xl">
-                    <Cart selectedCourse ={selectedCourse} remaining = {remaining} totalCredit ={totalCredit}></Cart>
+                    <Cart totalPrice = {totalPrice} selectedCourse ={selectedCourse} remaining = {remaining} totalCredit ={totalCredit}></Cart>
                   
                 </div>
                 <ToastContainer></ToastContainer>
