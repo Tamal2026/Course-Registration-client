@@ -2,6 +2,7 @@
 import './App.css'
 import Home from './Component/Home/Home'
 
+
 function App() {
 
 
@@ -9,7 +10,8 @@ function App() {
     <>
   
       <h1 className='font-bold text-4xl text-center'>Course Registration</h1>
-      <Home></Home>
+      <Home ></Home>
+     
     </>
   )
 }

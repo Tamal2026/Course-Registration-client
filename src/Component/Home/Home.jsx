@@ -1,7 +1,13 @@
 import { useState, useEffect } from "react";
 import Cart from "./Cart";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
+
+
 
 const Home = () => {
+ 
     const [allCourse, setallCourse] = useState([]);
     const [selectedCourse, setselectedCourse] = useState([]);
     const [remaining,setremaining] = useState(20);
@@ -16,7 +22,7 @@ const handleCourse=(course)=>{
     const isExist = selectedCourse.find(item=>item.id == course.id);
     let count =course.credit;
    if(isExist){
-    return alert("Already Complete");
+    couseSelectNotify();
    }
    else{
     setselectedCourse([...selectedCourse,course])
@@ -26,7 +32,7 @@ const handleCourse=(course)=>{
    
 const totalRemaining = 20 - count;
 if(count>20){
-  return  alert('Tk sesh ar hbe ne')
+    maxCredit();
 }
 else{
 
@@ -40,6 +46,8 @@ else{
     }
 
 }
+const couseSelectNotify = () => toast.error("You already select this course");
+const maxCredit = () => toast.warn("You reached maximum credit of courses");
 
     return (
         <>
@@ -52,7 +60,7 @@ else{
                                 <h1 className="font-bold pl-5">{course.courseName}</h1>
                                 <p className="font-extralight text-gray-400 pl-3">{course.courseDetails}</p>
                                 <div className="flex justify-around">
-                                    <h1>Price: {course.price}</h1>
+                                    <h1>Price: {course.price}$</h1>
                                     <h1>Credit: {course.credit} Hr</h1>
                                 </div>
                                 <button className="bg-blue-500 text-white font-semibold w-10/12 text-center rounded-lg ml-7 my-3 py-1" onClick={()=>handleCourse(course)}>Select</button>
@@ -64,6 +72,7 @@ else{
                     <Cart selectedCourse ={selectedCourse} remaining = {remaining} totalCredit ={totalCredit}></Cart>
                   
                 </div>
+                <ToastContainer></ToastContainer>
             </div>
         </>
     );
