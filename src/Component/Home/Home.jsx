@@ -20,41 +20,33 @@ const Home = () => {
         .then(res => res.json())
         .then((data) => setallCourse(data))
     }, []);
-const handleCourse=(course)=>{
-    const isExist = selectedCourse.find(item=>item.id == course.id);
-
-    let count =course.credit;
-
-    let countPrice = course.price;
-
-   if(isExist){
-
-    couseSelectNotify();
-   }
-   else{
-    setselectedCourse([...selectedCourse,course])
-    selectedCourse.forEach(item=>{
-        count = count+item.credit;
-        countPrice = countPrice+item.price;
-        
-    });
-   
-const totalRemaining = 20 - count;
-if(count>20){
-    maxCredit();
-}
-else{
-
-    settotalCredit(count);
-
-    setTotalPrice(countPrice);
-    setremaining(totalRemaining);
-       }
-       
-    
-    }
-
-}
+    const handleCourse = (course) => {
+        const isExist = selectedCourse.find((item) => item.id === course.id);
+        let count = course.credit;
+        let countPrice = course.price;
+      
+        if (isExist) {
+          couseSelectNotify();
+        } else {
+          if (totalCredit + count > 20) {
+            maxCredit();
+            return;
+          }
+      
+          setselectedCourse([...selectedCourse, course]);
+      
+          selectedCourse.forEach((item) => {
+            count += item.credit;
+            countPrice += item.price;
+          });
+      
+          settotalCredit(count);
+          setTotalPrice(countPrice);
+          const totalRemaining = 20 - count;
+          setremaining(totalRemaining);
+        }
+      };
+      
 const couseSelectNotify = () => toast.error("You already select this course");
 const maxCredit = () => toast.warn("You reached maximum credit of courses");
 
